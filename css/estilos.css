@@ -1,0 +1,108 @@
+body {
+    text-align: center;
+}
+header, main {
+    max-width: 350px;
+    margin: auto;
+    font-family: sans-serif;
+}
+
+h1 {
+    margin-top: 50px;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    font-size: 30px;
+    line-height: 1;
+}
+em {
+    font-style: normal;
+    font-size: 20px;
+    color: gray;
+}
+
+.keyboard {
+    position: absolute;
+    bottom: 50px;
+}
+.key {
+    /* inline-block té en compte els marges verticals */
+    display: inline-block;  
+    background-color: #dde; 
+    font-size: 0.8em;
+    padding: 15px 10px;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.included {
+    background-color: green !important;
+}
+.notIncluded {
+    background-color: black !important;
+    color: white;
+}
+
+
+.letter {
+    width: 30px;
+    height: 30px;
+    border: 2px solid gray;
+    border-radius: 5px;
+    margin: 0 3px;
+    /* https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.letters .row {
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.badPosition {
+    background-color: orange;
+}
+.correct {
+    background-color: green;
+}
+.wordIncomplete {
+    animation: incomplete 0.2s;
+    animation-iteration-count: 3;
+}
+
+@keyframes incomplete{
+    0% {
+        top: 0;
+    }
+    25% {
+        top: 10px;
+    }
+    50% {
+        top: 0px;
+    }
+    75% {
+        top: -10px;
+    }
+    100% {
+        top: 0;
+    }
+}
+
+
+.result {
+    margin: 30px;
+}
+.confeti {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: -1;
+}
+.confeti img {
+    width: 600px;
+    height: 100vh;
+}
